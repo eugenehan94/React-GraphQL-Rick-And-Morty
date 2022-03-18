@@ -9,10 +9,11 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { useCharacter } from "../hooks/useCharacter";
+import { useCharacter } from "../hooks/useFindCharacters";
+import { Link } from "react-router-dom";
 const Cards = () => {
   const { data } = useCharacter();
-  console.log(data)
+  console.log(data);
   return (
     <Container sx={{ py: 8 }} maxWidth="lg">
       <Grid container spacing={4}>
@@ -38,16 +39,16 @@ const Cards = () => {
               />
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="h2">
-                 {results.name}
+                  {results.name}
                 </Typography>
-                <Typography>
-                  This is a media card. You can use this section to describe the
-                  content.
-                </Typography>
+                <Typography>Gender: {results.gender}</Typography>
+                <Typography>Species: {results.species}</Typography>
+                <Typography>Status: {results.status}</Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">View</Button>
-                <Button size="small">Edit</Button>
+                <Link to={`character/${results.id}`}>
+                  <Button size="small">View</Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>

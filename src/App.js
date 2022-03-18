@@ -1,21 +1,14 @@
 import React from "react";
-import Hero from "./components/Hero"
-import Cards from "./components/Cards"
-import Footer from "./components/Footer"
-import { useCharacter } from "./hooks/useCharacter";
-
+import { Routes, Route} from "react-router-dom";
+import Home from "./pages/Home";
+import Character from "./pages/Character"
 const App = () => {
-  // const {error, loading, data} = useCharacter();
-  const {loading } = useCharacter();
-  if (loading) {
-    return <></>;
-  }
-
   return (
     <div>
-      <Hero/>
-      <Cards/>
-      <Footer/>
+      <Routes>
+        <Route path="/" element ={<Home/>}/>
+        <Route path="character/:characterId" element={<Character/>}/>
+      </Routes>
     </div>
   );
 };
