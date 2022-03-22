@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Container, Typography, Stack } from "@mui/material";
+import { Box, Container, Typography, Stack, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <Box
@@ -38,6 +39,12 @@ const Hero = () => {
           spacing={2}
           justifyContent="center"
         >
+          <Link to="/">
+            <Button variant="contained">Characters</Button>
+          </Link>
+          <Link to="locations">
+            <Button variant="contained">Locations</Button>
+          </Link>
         </Stack>
       </Container>
     </Box>
