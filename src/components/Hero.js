@@ -18,7 +18,7 @@ const Hero = () => {
           color="text.primary"
           gutterBottom
         >
-          Rick & Morty Character Album
+          Rick & Morty GraphQL Album
         </Typography>
         <Typography
           variant="h5"
@@ -42,7 +42,7 @@ const Hero = () => {
           <Link to="/">
             <Button variant="contained">Characters</Button>
           </Link>
-          <Link to="locations">
+          <Link to="/locations">
             <Button variant="contained">Locations</Button>
           </Link>
         </Stack>

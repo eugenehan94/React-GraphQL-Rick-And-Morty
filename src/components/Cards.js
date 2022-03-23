@@ -46,8 +46,8 @@ const Cards = () => {
                 <Typography>Status: {results.status}</Typography>
               </CardContent>
               <CardActions>
-                <Link to={`character/${results.id}`}>
-                  <Button size="small">View</Button>
+                <Link to={`character/${results.id}`} style={{textDecoration: "none"}}>
+                  <Button size="small">See More</Button>
                 </Link>
               </CardActions>
             </Card>

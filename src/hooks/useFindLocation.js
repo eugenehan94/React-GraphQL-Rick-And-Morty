@@ -6,6 +6,7 @@ const GET_LOCATION = gql`
       name
       residents {
         name
+        image
       }
     }
   }

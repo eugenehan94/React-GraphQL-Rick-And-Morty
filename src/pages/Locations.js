@@ -1,8 +1,10 @@
 import React from "react";
 import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 import { useFindLocations } from "../hooks/useFindLocations";
 import {
   Container,
+  Card,
   CardContent,
   CardActions,
   Grid,
@@ -22,9 +24,10 @@ const Locations = () => {
     <div>
       <Hero />
       <Container sx={{ py: 8 }} maxWidth="lg">
-        <Grid container>
+        <Grid container spacing={3}>
           {data.locations.results.map((location) => (
             <Grid item xs={12} sm={6} md={3} key={location.id}>
+              <Card variant="outlined">
               <CardContent>
                 <Typography align="center">{location.name}</Typography>
                 <Typography align="center">{location.dimension}</Typography>
@@ -35,10 +38,12 @@ const Locations = () => {
                   <Button size="small">Learn More</Button>
                 </Link>
               </CardActions>
+              </Card>
             </Grid>
           ))}
         </Grid>
       </Container>
+      <Footer/>
     </div>
   );
 };
