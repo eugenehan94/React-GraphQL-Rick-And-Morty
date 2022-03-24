@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { useCharacter } from "../hooks/useFindCharacters";
 import { Link } from "react-router-dom";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const Cards = () => {
   const { data } = useCharacter();
   console.log(data);
@@ -41,13 +42,22 @@ const Cards = () => {
                 <Typography gutterBottom variant="h5" component="h2">
                   {results.name}
                 </Typography>
-                <Typography>Gender: {results.gender}</Typography>
-                <Typography>Species: {results.species}</Typography>
-                <Typography>Status: {results.status}</Typography>
+                <Grid container spacing={1}>
+                  <Grid item>
+                  <Typography>Gender: </Typography>
+                  <Typography>Species: </Typography>
+                  <Typography>Status: </Typography>
+                  </Grid>
+                  <Grid item>
+                <Typography>{results.gender}</Typography>
+                <Typography>{results.species}</Typography>
+                <Typography>{results.status}</Typography>
+                </Grid>
+                </Grid>
               </CardContent>
               <CardActions>
                 <Link to={`character/${results.id}`} style={{textDecoration: "none"}}>
-                  <Button size="small">See More</Button>
+                  <Button size="small" endIcon={<ArrowForwardIosIcon/>}>See More</Button>
                 </Link>
               </CardActions>
             </Card>

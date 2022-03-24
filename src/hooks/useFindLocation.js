@@ -5,8 +5,12 @@ const GET_LOCATION = gql`
     location(id: $id) {
       name
       residents {
+        id
         name
         image
+        species
+        gender
+        status
       }
     }
   }

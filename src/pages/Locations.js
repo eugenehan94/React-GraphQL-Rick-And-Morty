@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const Locations = () => {
   const { data, loading } = useFindLocations();
   console.log("Locations data: ", data);
@@ -34,8 +35,8 @@ const Locations = () => {
                 <Typography align="center">{location.type}</Typography>
               </CardContent>
               <CardActions sx={{ display: "flex", justifyContent: "center" }}>
-                <Link to={`/location/${location.id}`}>
-                  <Button size="small">Learn More</Button>
+                <Link to={`/location/${location.id}`} style={{textDecoration: "none"}}>
+                  <Button size="small" endIcon={<ArrowForwardIosIcon/>}>Who Lives Here</Button>
                 </Link>
               </CardActions>
               </Card>

@@ -39,11 +39,11 @@ const Hero = () => {
           spacing={2}
           justifyContent="center"
         >
-          <Link to="/">
-            <Button variant="contained">Characters</Button>
+          <Link to="/" style={{textDecoration: "none"}}>
+            <Button variant="contained" size="large">Characters</Button>
           </Link>
-          <Link to="/locations">
-            <Button variant="contained">Locations</Button>
+          <Link to="/locations" style={{textDecoration: "none"}}>
+            <Button variant="contained" size="large">Locations</Button>
           </Link>
         </Stack>
       </Container>

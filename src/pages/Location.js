@@ -5,30 +5,33 @@ import { useFindLocation } from "../hooks/useFindLocation";
 import {
   Button,
   Card,
-  CardActions,
   CardMedia,
-  CardContent,
   Container,
   Grid,
   Typography,
 } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 const Location = () => {
   const params = useParams();
   const { data, loading } = useFindLocation(params.locationId);
-  console.log(data);
   if (loading) {
     return <></>;
   }
 
   return (
     <div>
+      <Typography align="center" component="h1" variant="h2">
+        Residents of:
+      </Typography>
+      <Typography align="center" component="h1" variant="h2">
+        {data.location.name}
+      </Typography>
       <Container sx={{ py: 8 }} maxWidth="lg">
-        <Typography>Residents of: </Typography>
-        <Typography>{data.location.name}</Typography>
-        <Link to ="/locations">
-        <Button>Back to location</Button>
+        <Link to="/locations" style={{ textDecoration: "none" }}>
+          <Button startIcon={<ArrowBackIcon />} variant="outlined">Back to location</Button>
         </Link>
-        <Grid container spacing={4}>
+
+        <Grid container spacing={4} sx={{ mt: 1 }}>
           {data.location.residents.map((result) => (
             <Grid item xs={12} sm={6} md={4} key={result.id}>
               <Card
@@ -40,16 +43,23 @@ const Location = () => {
               >
                 <CardMedia
                   component="img"
-                  sx={
-                    {
-                      // 16:9
-                      // pt: "56.25%",
-                    }
-                  }
                   image={result.image}
                   alt={result.name}
                 />
-                <Typography>{result.name}</Typography>
+                <Grid container spacing={2}>
+                  <Grid item>
+                    <Typography>Name: </Typography>
+                    <Typography>Species: </Typography>
+                    <Typography>Gender: </Typography>
+                    <Typography>Status: </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography>{result.name}</Typography>
+                    <Typography>{result.species}</Typography>
+                    <Typography>{result.gender}</Typography>
+                    <Typography>{result.status}</Typography>
+                  </Grid>
+                </Grid>
               </Card>
             </Grid>
           ))}
