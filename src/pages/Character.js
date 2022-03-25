@@ -5,11 +5,10 @@ import { useFindCharacter } from "../hooks/useFindCharacter";
 import { Grid, Typography, Button, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { BUTTON } from "../_helper/constants";
 const Character = () => {
   const params = useParams();
   const { data, loading } = useFindCharacter(params.characterId);
-  console.log("params data: ", data);
-
   if (loading) {
     return <></>;
   }
@@ -37,21 +36,35 @@ const Character = () => {
               <Typography>{data.character.status}</Typography>
             </Grid>
           </Grid>
-          <Link to="/" style={{textDecoration: "none"}}>
-            <Button fullWidth startIcon={<ArrowBackIcon />} variant="outlined" sx={{marginTop: "10px"}}>
-              Back To Home Page
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Button
+              fullWidth
+              startIcon={<ArrowBackIcon />}
+              variant="outlined"
+              sx={{ marginTop: "10px" }}
+            >
+              {BUTTON.BACK_HOME}
             </Button>
           </Link>
         </Grid>
         <Grid item xs={12} sm={8}>
-          <Typography variant="h2" sx={{ textAlign: { xs: "center", sm: "left" } }}>
+          <Typography
+            variant="h2"
+            sx={{ textAlign: { xs: "center", sm: "left" } }}
+          >
             Episodes
           </Typography>
           {data.character.episode.map((episode) => (
             <Paper
               elevation={3}
               square
-              sx={{ marginTop: "10px", borderLeft: "15px solid rgba(255,0,0,0.8)", paddingLeft: "10px", paddingTop: "5px", paddingBottom: "5px" }}
+              sx={{
+                marginTop: "10px",
+                borderLeft: "15px solid rgba(255,0,0,0.8)",
+                paddingLeft: "10px",
+                paddingTop: "5px",
+                paddingBottom: "5px",
+              }}
             >
               <Typography sx={{ textAlign: { xs: "center", sm: "left" } }}>
                 {episode.episode}

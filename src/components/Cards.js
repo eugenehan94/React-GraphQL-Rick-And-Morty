@@ -12,9 +12,9 @@ import {
 import { useCharacter } from "../hooks/useFindCharacters";
 import { Link } from "react-router-dom";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import {MORE_INFO} from "../_helper/constants";
 const Cards = () => {
   const { data } = useCharacter();
-  console.log(data);
   return (
     <Container sx={{ py: 8 }} maxWidth="lg">
       <Grid container spacing={4}>
@@ -29,12 +29,6 @@ const Cards = () => {
             >
               <CardMedia
                 component="img"
-                sx={
-                  {
-                    // 16:9
-                    // pt: "56.25%",
-                  }
-                }
                 image={results.image}
                 alt={results.name}
               />
@@ -57,7 +51,7 @@ const Cards = () => {
               </CardContent>
               <CardActions>
                 <Link to={`character/${results.id}`} style={{textDecoration: "none"}}>
-                  <Button size="small" endIcon={<ArrowForwardIosIcon/>}>See More</Button>
+                  <Button fullWidth size="large" endIcon={<ArrowForwardIosIcon/>}>{MORE_INFO}</Button>
                 </Link>
               </CardActions>
             </Card>

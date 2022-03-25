@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Typography, Stack, Button } from "@mui/material";
+import { HERO_TITLE, HERO_DESC, BUTTON } from "../_helper/constants";
 import { Link } from "react-router-dom";
 const Hero = () => {
   return (
@@ -18,7 +19,7 @@ const Hero = () => {
           color="text.primary"
           gutterBottom
         >
-          Rick & Morty GraphQL Album
+          {HERO_TITLE}
         </Typography>
         <Typography
           variant="h5"
@@ -26,12 +27,7 @@ const Hero = () => {
           color="text.secondary"
           paragraph
         >
-          Rick and Morty is an American adult animated science fiction sitcom
-          created by Justin Roiland and Dan Harmon for Cartoon Network's
-          nighttime programming block, Adult Swim. The series follows the
-          misadventures of cynical mad scientist Rick Sanchez and his
-          good-hearted, but fretful grandson Morty Smith, who split their time
-          between domestic life and interdimensional adventures.
+          {HERO_DESC}
         </Typography>
         <Stack
           sx={{ pt: 4 }}
@@ -39,11 +35,15 @@ const Hero = () => {
           spacing={2}
           justifyContent="center"
         >
-          <Link to="/" style={{textDecoration: "none"}}>
-            <Button variant="contained" size="large">Characters</Button>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Button variant="contained" size="large">
+              {BUTTON.CHARACTERS}
+            </Button>
           </Link>
-          <Link to="/locations" style={{textDecoration: "none"}}>
-            <Button variant="contained" size="large">Locations</Button>
+          <Link to="/locations" style={{ textDecoration: "none" }}>
+            <Button variant="contained" size="large">
+              {BUTTON.LOCATIONS}
+            </Button>
           </Link>
         </Stack>
       </Container>
