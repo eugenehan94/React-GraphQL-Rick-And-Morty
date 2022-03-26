@@ -1,3 +1,8 @@
+App link: 
+https://eugenehan94.github.io/React-GraphQL-Rick-And-Morty/#/
+
+-----------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
