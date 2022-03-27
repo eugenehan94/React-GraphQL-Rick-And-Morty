@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "f8b1b010d1213df2cc70",
-    "url": "/React-GraphQL-Rick-And-Morty/static/js/main.f8b1b010.chunk.js"
+    "revision": "871482200e4dcc449c81",
+    "url": "/React-GraphQL-Rick-And-Morty/static/js/main.87148220.chunk.js"
   },
   {
     "revision": "f2c462198f751fcf8ce4",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/React-GraphQL-Rick-And-Morty/static/js/runtime~main.35c9f59a.js"
   },
   {
-    "revision": "d4d52e9b075ef8a22c5067f8ba282bf2",
+    "revision": "0b9e0a54b69a7b212be6e6fa7dbf2dfb",
     "url": "/React-GraphQL-Rick-And-Morty/index.html"
   }
 ];
