@@ -35,16 +35,10 @@ test("testing", async () => {
     },
   ];
   render(
-    <MockedProvider
-      mock={mock}
-      addTypename={false}
-      cache={
-        new InMemoryCache({
-          possibleTypes,
-        })
-      }
-    >
+    <MockedProvider mock={mock}>
+      <useCharacter/>
       <Cards />
     </MockedProvider>
   );
+  await new Promise(resolve => setTimeout(resolve, 0));
 });
