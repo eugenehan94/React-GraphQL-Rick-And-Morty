@@ -1,5 +1,19 @@
-App link: 
+# React GraphQL Rick And Morty
+This React application is created with GraphQL and Material UI V5
+
+# Link To Live Version Of Application 
 https://eugenehan94.github.io/React-GraphQL-Rick-And-Morty/#/
+
+# Demo Screenshot
+## 1
+![RickMortyOneGif](https://user-images.githubusercontent.com/59939048/168405810-d7f60cfb-851e-439a-9c68-09a6536f51a3.gif)
+
+## 2
+![RickMortyTwoGif](https://user-images.githubusercontent.com/59939048/168405817-e6483553-2329-41bd-9cb3-c06367533eb0.gif)
+
+## 3
+![RickMortyThreeGif](https://user-images.githubusercontent.com/59939048/168405820-8049e20a-3211-457a-a2b0-b12b302fab63.gif)
+
 
 -----------------------------------------------------------------------------------
 
